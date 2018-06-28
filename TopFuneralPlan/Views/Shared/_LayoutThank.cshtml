@@ -1,0 +1,447 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Thank | TopFuneralPlan.co.uk</title>
+    <link href=@Url.Content("~/content/css/bootstrap.min.css") rel="stylesheet" type="text/css">
+    <link href=@Url.Content("~/content/css/style.css") rel="stylesheet" type="text/css">
+    <link href=@Url.Content("~/content/css/responsive.css") rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Roboto:300,400,500,700" rel="stylesheet">
+    <style>
+        #loading {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999999;
+            width: 100%;
+            height: 100%;
+            background: #fff url(@Url.Content("~/content/images/loading.gif")) no-repeat center center;
+        }
+    </style>
+</head>
+
+<body>
+   
+    <!--<div id="loading"></div>-->
+    <div class="container-fluid nopadd">
+        <div id="main-body">
+            @Html.Partial("_Partialheader")
+            @RenderBody()
+
+
+       </div>
+        </div>
+    @Html.Partial("_Partialfooter")
+
+
+
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src=@Url.Content("~/content/js/bootstrap.min.js") type="text/javascript"></script>
+ 
+    @*<script type="text/javascript">
+        $(document).on('click','.prevent_submit_before_ajax',function(){
+
+
+          
+
+
+             var day = $('.desktop_day').val();
+            var month = $('.desktop_month').val();
+            var year = $('.desktop_year').val();
+
+
+
+
+
+
+
+           var ajax_url = 'https://topfuneralplan.co.uk/ajax';
+            var postAjax = true;
+
+
+            var title = $('.desktop_title').val();
+            var first_name = $('.desktop_first_name').val();
+            var last_name = $('.desktop_last_name').val();
+            var year = $('.desktop_year').val();
+            var month = $('.desktop_month').val();
+            var date = $('.desktop_day').val();
+            var email_id = $('.desktop_email').val();
+            var address = $('.desktop_address').val();
+
+            var letters = /^[A-Za-z]+$/;
+
+            if(first_name.match(letters))
+            {
+                $('.desktop_first_name').css('border', 'none');
+
+                postAjax = true;
+            }else{
+                $('.desktop_first_name').val('');
+                $('.desktop_first_name').attr("placeholder", "First Name Only Alphabet");
+                $('.desktop_first_name').css('border', 'solid 2px red');
+                return false;
+                postAjax = false;
+            }
+
+            if(last_name.match(letters))
+            {
+                $('.desktop_last_name').css('border', 'none');
+
+                postAjax = true;
+            }else{
+                $('.desktop_last_name').val('');
+                $('.desktop_last_name').attr("placeholder", "Last Name Only Alphabet");
+                $('.desktop_last_name').css('border', 'solid 2px red');
+                return false;
+                postAjax = false;
+            }
+
+            <!--------------------------------------------dob >
+
+            /*
+                function getAge(birthDateString) {
+                var today = new Date();
+                var birthDate = new Date(birthDateString);
+                var age = today.getFullYear() - birthDate.getFullYear();
+
+                var m = today.getMonth() - birthDate.getMonth();
+
+                if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                    age;
+                    //age--;
+                }
+
+                return age;
+                }
+                */
+
+            function age(birthdate, senddate) {
+
+                //var birthdate = document.getElementById('DOB').value; // in "dd/MM/yyyy" format
+                //var senddate = document.getElementById('Date').value; // in "dd/MM/yyyy" format
+                var x = birthdate.split("/");
+                var y = senddate.split("/");
+                var bdays = x[0];
+                var bmonths = x[1];
+                var byear = x[2];
+                //alert(bdays);
+                var sdays = y[0];
+                var smonths = y[1];
+                var syear = y[2];
+                //alert(sdays);
+                if (sdays < bdays) {
+                    sdays = parseInt(sdays) + 30;
+                    smonths = parseInt(smonths) - 1;
+                    //alert(sdays);
+                    var fdays = sdays - bdays;
+                    //alert(fdays);
+                }
+                else {
+                    var fdays = sdays - bdays;
+                }
+                if (smonths < bmonths) {
+                    smonths = parseInt(smonths) + 12;
+                    syear = syear - 1;
+                    var fmonths = smonths - bmonths;
+                }
+                else {
+                    var fmonths = smonths - bmonths;
+                }
+                var fyear = syear - byear;
+
+                return fyear;
+                //alert(fyear + ' years ' + fmonths + ' months ' + fdays + ' days');
+            }
+
+            var birthdate = day+'/'+month+'/'+year;
+            var now = new Date();
+            var senddate = now.getDate()+'/'+(now.getMonth()+1)+'/'+now.getFullYear();
+
+            var ageup = age(birthdate,senddate);
+
+            //var ageup = getAge(start);
+
+            //alert(ageup);
+            if(ageup >= 18 && ageup <= 100) {
+                postAjax = true;
+                $('.desktop_day').css('border', 'none');
+                $('.desktop_month').css('border', 'none');
+                $('.desktop_year').css('border', 'none');
+
+            } else{
+                postAjax = false;
+                $('.desktop_day').val('');
+                $('.desktop_month').val('');
+                $('.desktop_year').val('');
+
+                $('.desktop_day').css('border', 'solid 2px red');
+                $('.desktop_month').css('border', 'solid 2px red');
+                $('.desktop_year').css('border', 'solid 2px red');
+                //alert("your age less than 18");
+            }
+            <!--------------------------------------------dob >
+
+
+                var phone =  $(".desktop_phone_no").val();
+            var len_count = $('.desktop_phone_no').val().length;
+
+
+
+            if(phone !=''){
+                if (isNaN(phone)) {
+                    // It isn't a =number
+                    $('.desktop_phone_no').css('border', 'solid 2px red');
+                    postAjax = false;
+                } else {
+                    // It is a number
+
+
+                    var one = String(phone).charAt(0);
+                    // convert the first digit back to an integer
+                    var one_as_number = Number(one);
+                    //alert(one_as_number);
+
+                    if(len_count == 11){
+
+                        if(one_as_number == 0){
+                            $('.desktop_phone_no').css('border', 'none');
+                            postAjax = true;
+                        }else{
+                            $('.desktop_phone_no').css('border', 'solid 2px red');
+                            postAjax = false;
+                        }
+
+                    }else if(len_count == 13){
+                        var three_char =	phone.slice(0, 3);
+                        if(three_char =='+44'){
+                            $('.desktop_phone_no').css('border', 'none');
+                            postAjax = true;
+                        }else{
+                            $('.desktop_phone_no').css('border', 'solid 2px red');
+                            postAjax = false;
+                        }
+
+                    }else if(len_count == 12){
+                        var two_char =	phone.slice(0, 2);
+
+                        if(two_char =='44'){
+                            $('.desktop_phone_no').css('border', 'none');
+                            postAjax = true;
+                        }else{
+                            $('.desktop_phone_no').css('border', 'solid 2px red');
+                            postAjax = false;
+                        }
+
+                    }else{
+                        $('.desktop_phone_no').css('border', 'solid 2px red');
+                        $('.desktop_phone_no').val('');
+                        $('.desktop_phone_no').attr("placeholder", "Type Your Phone Number ");
+                        postAjax = false;
+                    }
+
+                }
+            }else{
+                $('.desktop_phone_no').css('border', 'solid 2px red');
+                postAjax = false;
+            }
+
+
+
+            var emil = $('.desktop_email').val();
+            var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+            if(emil !=''){
+                if( !emailReg.test( emil ) ) {
+                    $('.desktop_email').attr("placeholder", "Please Enter Valid Email");
+                    $('.desktop_email').css('border', 'solid 2px red');
+
+                } else {
+                    $('.desktop_email').css('border', 'none');
+                }
+            }else{
+                $('.desktop_email').attr("placeholder", "Please Enter Valid Email");
+                $('.desktop_email').css('border', 'solid 2px red');
+            }
+
+            var address = $('.desktop_address').val();
+            if(address == ''){
+                $('.desktop_address').attr("placeholder", "Please Enter Address");
+                $('.desktop_address').css('border', 'solid 2px red');
+            }else{
+                $('.desktop_address').css('border', 'none');
+            }
+
+
+            //var postcodeRegEx = /[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}/i;
+            var postcodeRegEx = /^[a-zA-Z]{1,2}([0-9]{1,2}|[0-9][a-zA-Z])\s*[0-9][a-zA-Z]{2}$/;
+
+            var get_post_code = $('.desktop_post_code').val();
+            var check_post = postcodeRegEx.test(get_post_code);
+
+            if(check_post){
+                $('.desktop_post_code').css('border', 'none');
+                postAjax = true;
+            }else{
+                $('.desktop_post_code').css('border', 'solid 2px red');
+                postAjax = false;
+            }
+
+            if(postAjax){
+                var data = {
+                    'action': 'update_user',
+                    'title' 		:title,
+                    'first_name' 	:first_name,
+                    'last_name' 	:last_name,
+                    'year'			:year,
+                    'month'			:month,
+                    'date'			:date,
+                    'contact_no'	:phone,        //07707443383  -correct ph
+                    'email_id'		:email_id,
+                    'address' 		:address,
+                    'post_code' 	:get_post_code             //CF47 0HW - Passes - Correct CF47 OHW - Passes - Incorrect
+                };
+
+                $.post(ajax_url, data, function(response) {
+                    var res_obj	= JSON.parse(response);
+                    var resStatus = res_obj.status;
+
+
+                    if(resStatus == true){
+                        $( ".desktop_form_submit" ).trigger( "click" );
+                        //$('.desktop_status_message').html('<span style="color:#008000">Success..</span>');
+
+                    }else{
+                        var err_message = res_obj.err_msg;
+                        $('.desktop_status_message').html('<span style="color:#F00">'+err_message+'</span>');
+
+                    }
+
+                });
+            }
+
+        });
+    </script>*@
+
+
+    <span style="position: absolute; left: 0px; top: -20000px; padding: 0px; margin: 0px; border: none; white-space: pre; line-height: normal; font-family: &quot;Trebuchet MS&quot;, Helvetica, sans-serif; font-size: 18px; font-weight: normal; display: none;">Mpgyi</span>
+</body>
+</html>
+<div id="termsModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="modal-title">Terms &amp; Conditions</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    The topfuneralplan.co.uk are is an online information source for prepaid funeral plans.TopFuneralPlan.co.uk provides a free prepaid funeral plans search service. It is owned by Web Search Media Limited. <br>
+                    <br>
+                    Nothing on this website should be considered asan advice. We are not authorised by the Financial Conduct Authority (FCA) to dispense advice relating to prepaid funeral plan services, and we should not be considered as financial or prepaid funeral advisors or brokers. We may receive commission or fees from third parties as a result of your use of the services of those third parties. We do not charge you for the services we offer. The commission or fees do not indicate an agency relationship between us and the third parties, nor any involvement in any contract that you form with that third party. Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, completeness or suitability of the information and materials found or offered on this website for any particular purpose. The content of the pages of this website are for your general information and use only. It is subject to change without notice. You agree that we don't act as your agent in anyway, or as an agent of any third party mentioned on this website. This website is engaged in the marketing and supply of third party information relating to the prepaid funeral industry. You acknowledge that such information and materials may contain inaccuracies or errors and we expressly exclude liability for any such inaccuracies or errors to the fullest extent permitted by law. Your use of any information or materials on this website is entirely at your own risk, for which we shall not be liable. It shall be your own responsibility to ensure that any products, services or information available through this website meet your specific requirements. <br>
+                    <br>
+                    We take the privacy of your details very seriously. Please see our privacy policy for further information on how we handle your data. We are a registered Data Controller with The Data Protection Act 1998, registration number ZA233488. <br>
+                    <br>
+                    As we do not add your personal details to any mailing, email or telephone calling lists, there is no need for you to opt out of any unwanted communications.<br>
+                    <br>
+                    If you have any questions about our site, please email us at – info@websearchmedia.co.uk.. <br>
+                    <br>
+                    For any specific queries related to prepaid funeral plans, please complete our contact form and an advisor will contact you at your preferred time to answer any questions you may have.<br>
+                    <br>
+                    <b>Access To Personal Data</b><br>
+                    <br>
+                    Under the Data Protection Act 1998 you can request copies of the personal information we hold on you by contacting us via e mail at <a href="mailto:info@websearchmedia.co.uk.">info@websearchmedia.co.uk.</a>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div id="policyModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="modal-title">Privacy Policy</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    This privacy policy sets out how we use and protect any information that you give us when you use this website. We are committed to ensuring that your privacy is protected. We will only use the information that we collect about you lawfully in accordance with the Data Protection Act 1998. We may change this policy from time to time by updating this page. You should check this page from time to time to ensure that you are happy with any changes. <br>
+                    <br>
+                    <b>What We Collect</b><br>
+                    <br>
+                    We will collect the following information:
+                </p>
+                <ul>
+                    <li>Your name, address including postcode and date of birth.</li>
+                    <li>Your email address, work, home or mobile telephone number.</li>
+                </ul>
+                <p>
+                    <b>The information we collect.</b><br>
+                    <br>
+                    We may collect personal information about you which you give to us when you use our services, for example, in order to obtain a quote for prepaid funeral plan. The provision of the services to you may also require us to store details of your transactions, together with details of your financial information. We will periodically review your personal information to ensure that we do not keep it for longer than is necessary.<br>
+                    <br>
+                    <b>Purposes for which we use information about you.</b><br>
+                    <br>
+                    We may use your personal information for the following purposes. <br>
+                    <br>
+                    Third party providers and data privacy
+                </p>
+                <ul>
+                    <li>To enable you to access and use the Services.</li>
+                    <li>To personalise aspects of our overall service to you.</li>
+                    <li>To communicate with you.</li>
+                    <li>To process a transaction between you and a third party.</li>
+                </ul>
+                <p><b>Passing on information about you.</b></p>
+                <p>Please be aware that once you use our services, you will be regarded as having given your consent to us disclosing your personal information to the following parties: </p>
+                <ul>
+                    <li>Third party providers whose products or services are listed on the results pages of the channels on our website, for the purposes of obtaining an online quotation for you or comparing different products and services as requested by you;</li>
+                    <li>The Financial Conduct Authority and/or other regulatory/governing bodies for the purposes of compliance monitoring;</li>
+
+                </ul>
+                <p><b>Informing you of offers and services which may be of interest.</b></p>
+                <p>We would like to keep you updated by phone, e-mail or text of other products and services which we feel you may benefit from. For example, we may e-mail you letting you know how you could save money by switching product and services. Wherever we capture your data you will be asked to confirm your acceptance of us using your data for these purposes. By providing your information when you use our site, you consent to us disclosing your personal information to the following parties: </p>
+                <ul>
+                    <li>Other companies in our group of companies, www.topfuneralplan.co.uk</li>
+                    <li>Our trusted business partners, whose products and services may save you money. </li>
+                </ul>
+                <p>You can ask us to stop passing your information to third parties for marketing purposes at any time, which we will do. Such a request may result in us ceasing to offer the services to you. We may disclose information about you in connection with legal proceedings or potential legal proceedings or if otherwise permitted to do so by law. </p>
+                <p><b>Electronic Communications.</b></p>
+                <p>When you agree to receive any electronic communications from us, you also agree to receive additional communications on products and services which we believe you may be interested in. Any electronic communications we send you will include clear and concise instructions to follow should you wish to unsubscribe at any time. </p>
+                <p><b>Third party providers and data privacy.</b></p>
+                <p>If you decide to enter into a contract with a third party provider through a channel on our website, the information you have provided to us together with any further information requested by, and supplied by you to, the third party provider will be held by the provider for the purposes set out in that provider's privacy policy. Therefore, you are strongly advised to read your chosen provider's privacy policy and satisfy yourself as to the purposes for which the provider will use your personal information before entering into the contract. We have no responsibility for the uses to which a provider puts your personal information once you have contracted with that provider. </p>
+                <p><b>List of cookies we collect</b></p>
+                <p>
+                    The table below lists the cookies we collect and what information they store.
+                    Google Analytics Google Analytics collects anonymous statistical data about how you use reed.co.uk. The information is used to track the performance of aurora-consulting.biz and to help us improve the service we offer to you To reject or delete these cookies: http://www.google.com/intl/en/privacypolicy.html<br>
+                    GOOGLE__UTMA COOKIE It tracks visitors. Metrics associated with the Google __utma cookie include: first visit (unique visit), last visit (returning visit).<br>
+                    GOOGLE__UTMB COOKIE These cookies work in tandem to calculate visit length. Google __utmb cookie demarks the exact arrival time.<br>
+                    GOOGLE__UTMC COOKIES then Google __utmc registers the precise exit time of the user.<br>
+                    GOOGLE__UTMZ COOKIE Monitors the HTTP Referrer and notes where a visitor arrived from, with the referrer siloed into type (Search engine (organic or cpc), direct, social and unaccounted).<br>
+                    GOOGLE__UTMV COOKIE It is a persistant cookie. It is used for segmentation, data experimentation and the __utmv works hand in hand with the __utmz cookie to improve cookie targeting capabilities.<br><br>
+
+                    If you wish to opt out of any further communication please email us at info@webseachmedia.co.uk (TopFuneralPlan.co.uk is owned by Web Search Media Ltd.) or you can write to us at our registered office:<br>
+                    <br>
+                    49 Whitefriars Avenue,
+                    Harrow, Middlesex,
+                    United Kingdom, HA3 5RQ
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+

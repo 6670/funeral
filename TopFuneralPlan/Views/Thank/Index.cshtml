@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutThank.cshtml";
+}
+
+<section class="slider">
+    @model TopFuneralPlan.Models.ThankModel
+    <div class="home-banner">
+        <img src="@Url.Content("~/content/images/home-img.jpg")" alt="" title="" />
+
+        <div class="float-sec thankyou-float">
+            <div class="container">
+                <div class="sm-banner-box thankyou-sec">
+                    <h2>@Model.Title @Model.FirstName @Model.LastName </h2>
+                    <h1>Thank you for your application.</h1>
+                    <p>
+                        We just need to ask you a few final questions to give you an accurate quote, and to determine what's best for you. <br>
+                        A friendly prepaid funeral plan adviser will call or email you shortly to discuss further.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Google Code for Conversion Conversion Page -->
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 811343199;
+    var google_conversion_label = "XfvqCKXapH8Q37rwggM";
+    var google_remarketing_only = false;
+    /* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/811343199/?label=XfvqCKXapH8Q37rwggM&amp;guid=ON&amp;script=0" />
+    </div>
+</noscript>
+
+@*msn tracking code*@
+<script>(function (w, d, t, r, u) { var f, n, i; w[u] = w[u] || [], f = function () { var o = { ti: "26003596" }; o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad") }, n = d.createElement(t), n.src = r, n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && s !== "loaded" && s !== "complete" || (f(), n.onload = n.onreadystatechange = null) }, i = d.getElementsByTagName(t)[0], i.parentNode.insertBefore(n, i) })(window, document, "script", "//bat.bing.com/bat.js", "uetq");</script>

@@ -1,0 +1,191 @@
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+
+/*--------------------------------------------------------------
+	Responsive media queries (mobile styles)
+--------------------------------------------------------------*/
+
+@media screen and (max-width:1199px) {
+	
+	.slider h1 {
+		font-size: 36px;
+	}
+	.thankyou-float h1 {
+		font-size: 78px;
+	}
+
+	
+}
+@media screen and (max-width:991px) and (min-width:768px) {
+	
+}
+@media screen and (max-width:1040px) {
+	
+}
+@media screen and (max-width:991px) {
+	
+	.form {
+		margin: 35px auto;
+		position: relative !important;
+		right: 0 !important;
+		top: 0;
+		width: 100%;
+	}
+	.sm-banner-box {
+		width: 100%;
+	}
+	.form-control {
+		margin-bottom: 15px;
+	}
+	.mrgnT {
+		margin-top: 0 !important;
+	}
+	.form {
+		display:none;
+	}
+	.form-mobile {
+		bottom: inherit;
+		display: block;
+		float: none !important;
+		left: 0;
+		margin: -200px auto 0 !important;
+		position: relative !important;
+		top: 0 !important;
+		width: 90%;
+	}
+	/*.float-sec {
+		background:#6a93c4 none repeat scroll 0 0;
+		position:relative;
+	}*/
+	.sm-banner-box {
+		margin: 87px 0 0;
+	}
+	.slider h1 {
+		margin: 0 0 30px;
+	}
+	.thankyou-float {
+		position:absolute;
+		background:none;
+	}
+	.thankyou-float .sm-banner-box {
+		margin-top:220px;
+	}
+	.home-banner {
+		background: #6a93c4 none repeat scroll 0 0;
+	}
+	
+	
+	
+}
+@media screen and (max-width:767px) {
+	
+	
+
+}
+@media screen and (max-width:640px) {
+	
+
+}
+@media screen and (max-width:540px) {
+	
+
+	
+}
+@media screen and (max-width:480px) {
+	
+	/*.flexslider img {
+		max-width: 100%;
+	}*/
+	.navbar-brand {
+		width: 210px;
+	}
+	.sm-banner-box {
+		margin: 100px 0;
+	}
+	.slider h1 {
+		font-size: 24px;
+		line-height: 34px;
+		margin: 0 0 40px;
+	}
+	.txt-list li {
+		font-size: 14px;
+		line-height: 34px;
+		padding:0 10px;
+	}
+	.flexslider img {
+		max-height: 450px;
+	}
+	.form h2 {
+		font-size: 24px;
+	}
+	.form h2 span {
+		font-size: 14px;
+	}
+	.form-btn {
+		background: rgba(0, 0, 0, 0) url("../images/input-btn.png") no-repeat scroll left center / 100% auto;
+		font-size: 16px;
+		height: 64px;
+		padding: 0 0 0 20px;
+	}
+	.foot-nav li {
+		border-bottom: 1px solid #2d6399;
+		border-right: medium none;
+		text-align: left;
+		width: 100%;
+	}
+	.foot-nav li a {
+		line-height: 46px;
+	}
+	.footer-bottom p {
+		font-size: 12px;
+	}
+	.footer-top {
+		padding-bottom: 10px;
+	}
+	.footer-top p {
+		font-size: 13px;
+		line-height: 20px;
+	}
+	.thankyou-float h1 {
+		font-size:55px;
+	}
+	.thankyou-sec h2 {
+		font-size: 30px;
+	}
+	.form-mobile {
+		margin: -300px auto 0 !important;
+	}
+	
+}
+@media screen and (max-width:380px) {
+	
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,587 @@
+﻿@charset "utf-8";/* CSS Document */
+body {
+	margin:0;
+	padding:0;
+	font-family: 'Roboto', sans-serif;
+}
+p {
+	font-size:16px;
+	color:#858585;
+	line-height:24px;
+	font-weight:normal;
+}
+a {
+	outline:none;
+	color:#4b5460;
+}
+a:focus {
+	outline:none;
+}
+.clearfix {
+	clear: both;
+	font-size: 0;
+	line-height: 0;
+	margin: 0;
+	padding: 0;
+}
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+::-moz-selection {
+	text-shadow: none;
+	background: #ff8c36;
+	color:#fff;
+}
+a, input, select, textarea, img, button {
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	transition: all 0.5s;
+}
+::selection {
+	text-shadow: none;
+	background: #ff8c36;
+	color:#fff;
+}
+a:hover, a:focus {
+	color: #e58525;
+	text-decoration: none;
+}
+header {
+	width: 100%;
+	position:relative;
+	z-index: 1030;
+}
+.top-head {
+	padding:20px 0;
+}
+header .container {
+	position:relative;
+}
+.nomrgn {
+	margin:0 !important;
+}
+.nopadd {
+	padding:0 !important;
+}
+.navbar-header {
+    left: 0;
+    position: absolute;
+    right: 0;
+    width: 100%;
+	z-index:9;
+}
+.navbar-header.stick {
+	background:rgba(0, 0, 0, 0.7);
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	transition: all 0.5s;
+}
+.navbar-brand {
+    color: #ffffff;
+    font-size: 38px;
+    height: auto;
+    line-height: 1.5;
+    margin: -12px 0 0 -15%;
+    padding: 0;
+    text-transform: uppercase;
+}
+.navbar-header.stick .navbar-brand {
+	width: 50%;
+}
+.navbar-brand img {
+	max-width:100%;
+	height:auto;
+}
+.width-full {
+	width:100% !important;
+}
+.float-sec {
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	margin:auto;
+	width:100%;
+	height:100%;
+	background:rgba(0, 0, 0, 0);
+	z-index:999;
+}
+.slider {
+	position:relative;
+}
+.sm-banner-box {
+	width:50%;
+	margin:217px 0 0;
+}
+.slider h1 {
+	font-size:47px;
+	color:#fff;
+	margin:0 0 108px;
+	font-weight:300;
+	line-height:54px;
+	text-shadow:0 5px 5px rgba(0,0,0,0.75);
+}
+.slider h1 span.txt-fu {
+    background: rgba(0, 0, 0, 0) url("../images/txt.png") no-repeat scroll 0 0;
+    display: inline-block;
+    height: 57px;
+    margin: -3px 0 0 9px;
+    padding: 0;
+    position: absolute;
+    width: 210px;
+}
+.slider h1 span {
+	color:#ff8d37;
+}
+.txt-list {
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+.txt-list li {
+	background:rgba(255,255,255,0.56);
+	border-radius:6px;
+	margin:2px 0;
+	font-size:19px;
+	color:#0b325b;
+	font-weight:bold;
+	line-height:44px;
+	padding:0 20px;
+}
+.tic-ico {
+	background:url(../images/ico3.png) no-repeat left center;
+	width:26px;
+	height:22px;
+	display:inline-block;
+	margin-right:16px;
+	vertical-align:middle;
+}
+.content {
+	padding-top:54px;
+	padding-bottom:54px;
+}
+.color-section {
+	background:#6a93c4;
+}
+.chart-section h4 {
+	font-size:20px;
+	color:#fff;
+	font-weight:bold;
+	line-height:26px;
+	margin:0 0 30px;
+}
+.mrgnT {
+    margin-top: 27px !important;
+}
+.chart-section p {
+	font-size:18px;
+	color:#fff;
+	line-height:26px;
+}
+.chart-box {
+	margin-top:42px;
+}
+.chart-box img {
+	width:100%;
+}
+footer {
+	text-align:center;
+}
+.footer-top {
+	background:#054586;
+	padding-bottom:35px;
+}
+.foot-nav {
+	list-style:none;
+	margin:0 0 18px;
+	padding:0;
+	border-bottom:1px solid #2d6399;
+}
+.foot-nav li {
+	border-right:1px solid #2d6399;
+	display:inline-block;
+	margin:0 -2px;
+}
+.foot-nav li a {
+	font-size:14px;
+	color:#fff;
+	padding:0 20px;
+	display:block;
+	line-height:70px;
+}
+.foot-nav li a:hover {
+	background:#6a93c4;
+}
+.footer-top p {
+	font-size:14px;
+	color:#fff;
+	line-height:24px;
+}
+.footer-top p a {
+	color:#fff;
+}
+.footer-top p a:hover {
+	color:#ff8c36;
+}
+.footer-bottom {
+	background:#6a93c4;
+	padding:18px 0;
+}
+.footer-bottom p {
+	margin:0;
+	font-size:14px;
+	color:#fff;
+}
+.form {
+	width:498px;
+	position:fixed;
+	top:22px;
+	right:115px;
+	background:#fff;
+	box-shadow:0 11px 13px rgba(0,0,0,0.47);
+	z-index:9999;
+}
+.form-title {
+	background:url(../images/title-img.png) no-repeat center center / cover;
+}
+.form h2 {
+	margin:0;
+	font-family: 'Montserrat', sans-serif;
+	color:#fff;
+	font-size:36px;
+	font-weight:bold;
+	text-align:center;
+	line-height:73px;
+}
+.form h2 span {
+	font-size:22px;
+	font-weight:normal;
+}
+.form-container {
+	padding:20px;
+}
+label {
+	font-size:16px;
+	color:#4b4b4b;
+	font-weight:500;
+}
+.form-control {
+	background:#eaebeb;
+	border:none;
+	height:37px;
+	line-height:37px;
+	box-shadow:0 0 0;
+	border-radius: 6px;
+}
+.form-control:focus {
+	box-shadow:0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(57, 92, 142, 0.6);
+}
+.form-btn {
+    background: rgba(0, 0, 0, 0) url("../images/input-btn.png") no-repeat scroll left center / cover;
+    border: medium none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 26px;
+    font-weight: bold;
+    height: 64px;
+    padding: 0 0 0 80px;
+    text-align: left;
+    width: 100%;
+}
+.form-btn:hover {
+	opacity:0.7;
+}
+.form p {
+	text-align:center;
+	font-size:13px;
+	color:#848383;
+	line-height:19px;
+}
+.secure-txt {
+	background:#395c8e;
+	margin:0 -20px -20px;
+	text-align:center;
+	font-size:16px;
+	color:#fff;
+}
+.icoTxt {
+	background:url(../images/ico2.png) no-repeat left center;
+	padding-left:44px;
+	line-height:53px;
+	display:inline-block;
+}
+.chart-box h4 {
+	background:#dedede;
+	text-align:center;
+	font-size:20px;
+	color:#020303;
+	line-height:41px;
+	font-weight:500;
+	margin:0;
+}
+.chart-main {
+	background:#e7f2f4;
+	padding:15px;
+}
+#myChart {
+    min-height: 500px;
+    width: 100%;
+}
+#chartContainer {
+	font-size:14px;
+	color:#020303;
+}
+.home-banner {
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+    z-index: 99;
+	padding:0;
+}
+.home-banner img {
+    height: auto;
+    min-width: 100%;
+}
+#main-body {
+	height:100%;
+}
+.form-mobile {
+	display:none;
+}
+.modal {
+    z-index: 99999;
+}
+.modal-header {
+	background:#395c8e;
+}
+.modal-title {
+	color:#fff;
+}
+button.close {
+    color: #ffffff;
+	opacity: 0.5;
+}
+.modal p {
+	color:#333;
+	font-size:14px;
+}
+.modal-backdrop {
+    z-index: 9999;
+}
+/*.contact-info {
+	min-height:800px;
+}*/
+.contact-info h2 {
+    border-bottom: 2px solid;
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    margin-top: 70px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+.con-details {
+    margin-bottom: 15px;
+}
+.con-details p {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 38px;
+}
+.con-details p a {
+    color: #fff;
+}
+.con-details p a:hover {
+    color: #ffad57;
+}
+.con-img {
+	margin-top:20px;
+}
+.con-img img {
+	width:100%;
+}
+.thankyou-sec {
+    background: #b6defd none repeat scroll 0 0;
+    border-radius: 6px;
+    float: right;
+    padding: 20px;
+    text-align:center;
+    width: 40%;
+}
+.thankyou-sec h2 {
+    color: #3a6394;
+    font-size: 40px;
+    margin-bottom: 0;
+}
+.thankyou-sec h1 {
+    color: #2a5384;
+    display: inline-block;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0.75);
+}
+.thankyou-sec p {
+    color: #194273;
+    font-size: 15px;
+    line-height: 20px;
+}
+.contact-form {
+	display:block;
+}
+.contact-info {
+    background: rgba(42, 87, 136, 0.6) none repeat scroll 0 0;
+    border-radius: 8px;
+    padding: 20px 30px;
+    width: 80%;
+}
+.modal-body li {
+	list-style:none;
+}
+.modal-body li::before {
+    content: ".";
+    float: left;
+    width: 16px;
+    font-size: 33px;
+    height: 16px;
+    margin: 0;
+    line-height: 0;
+    font-weight: bold;
+    color: #ff6a25;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*................. validation error...............*/
+
+.alert {
+    position: absolute !important;
+    width: 100%;
+    left: 0;
+    /* top: 34px; */
+    padding: 1px 10px;
+    font-weight: 300 !important;
+    border: none;
+    border-radius: 0;
+    background-color: #d40000 !important;
+    color: red !important;
+    text-align: center;
+    font-size: 13px !important;
+    z-index: 111;
+}
+
+.newRighterea form {
+    position: relative;
+}
+
+.has-error .help-block {
+    display: none;
+}
+
+.alert > p, .alert > ul {
+    display: none;
+}
+
+strong {
+    font-weight: 300 !important;
+}
+
+/**
+ * Default CSS theme for jQuery-Form-Validator.
+ * @author Victor Jonsson <victorjonsson.se>
+ */
+
+
+/* Input element having an invalid value */
+select.error,
+input.error,textarea.error {
+    border: 1px solid #d40000 !important;
+    /*background: antiquewhite;*/
+    background: url(../img/red_cross.png) antiquewhite;
+    background-position: right 15px center;
+    background-repeat: no-repeat;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+/* Input element having a valid value */
+select.valid,
+input.valid ,textarea.valid{
+    border: 1px solid #468847 !important;
+    /*background: #f3fff3;*/
+    background: url(../img/valid_check.png) #f3fff3;
+    background-position: right 15px center;
+    background-repeat: no-repeat;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+}
+
+/* File inputs with invalid value */
+input[type="file"].error {
+    color: #b94a48;
+    background: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+/* File inputs with valid value */
+input[type="file"].valid {
+    color: #468847;
+    background: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+
+/* Element showing the help text declared in data-validation-help */
+span.help {
+    color: #999;
+    font-size: 90%;
+}
+
+/* Here you can style the look of the input while server being
+  requested when using data-validation="server" */
+select.async-validation,
+input.async-validation,
+select.validating-server-side, /* deprecated */
+input.validating-server-side /* deprecated */ {
+    opacity: 0.5;
+    background-image: url('data:image/gif;base64,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');
+    background-position: right 5px center;
+    background-repeat: no-repeat;
+    background-color: #FFF;
+}
+
+/* Here you can style the entire form while server being
+  requested when using data-validation="server" */
+form.async-validation,
+form.validating-server-side /* deprecated */ {
+}
+
+#requestCallForm .alert {
+    top: -20px !important;
+}
+
